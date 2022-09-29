@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ContractService } from '@Contract/contract.service';
-import { ContractController } from '@Contract/contract.controller';
+import { ContractService } from '@root/contract/contract.service';
+import { ContractController } from '@root/contract/contract.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ContractSchema } from '@Contract/entities/contract.entity';
+import { ContractSchema } from '@root/contract/entities/contract.entity';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: 'Contract', schema: ContractSchema }])],

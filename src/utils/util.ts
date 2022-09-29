@@ -1,6 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import { Response } from '@Utils/response';
-//import { Constant } from '@Utils/constant';
+import { Response } from '@root/utils/response';
 
 export class Util {
     static getOkayResponse(data: any, msg: string) {

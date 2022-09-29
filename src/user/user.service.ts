@@ -1,11 +1,11 @@
 import { Injectable, Req, Res } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from '@User/entities/user.entity';
-import { CreateUserDTO } from '@User/dtos/create-user.dto';
+import { User, UserDocument } from '@root/user/entities/user.entity';
+import { CreateUserDTO } from '@root/user/dtos/create-user.dto';
 import * as bcrypt from 'bcrypt';
-import { UserRepository } from '@User/repositories/user.repository';
-import { OptionGetAll } from '@User/interfaces/option-get-all.interface';
+import { UserRepository } from '@root/user/repositories/user.repository';
+import { OptionGetAll } from '@root/user/interfaces/option-get-all.interface';
 import { ProposalDocument } from '@root/proposal/entities/proposal.entity';
 import { _ } from 'agile';
 

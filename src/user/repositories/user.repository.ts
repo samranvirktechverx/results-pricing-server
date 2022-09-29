@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CreateUserDTO } from '@User/dtos/create-user.dto';
-import { GetLengthUserDto } from '@User/dtos/length-user.dto';
-import { User, UserDocument } from '@User/entities/user.entity';
-import { Option } from '@User/interfaces/option.interface';
+import { CreateUserDTO } from '@root/user/dtos/create-user.dto';
+import { GetLengthUserDto } from '@root/user/dtos/length-user.dto';
+import { User, UserDocument } from '@root/user/entities/user.entity';
+import { Option } from '@root/user/interfaces/option.interface';
 import { QueryDTO } from '../dtos/query.dto';
 
 @Injectable()
