@@ -16,6 +16,15 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@root/*": ["src/*"],
+      "@Auth/*": ["src/auth/*"],
+      "@User/*": ["src/user/*"],
+      "@Template/*": ["src/template/*"],
+      "@Proposal/*": ["src/proposals/*"],
+      "@Contract/*": ["src/contract/*"],
+      "@Utils/*": ["src/utils/*"],
+    }
   }
 }
