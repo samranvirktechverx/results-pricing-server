@@ -3,3 +3,7 @@ export interface Option {
     type?: string;
     firstName?: {};
 }
+
+export interface OptionGetAll {
+    creatorId: string;
+}

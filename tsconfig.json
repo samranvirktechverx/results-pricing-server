@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "resolveJsonModule": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -18,13 +19,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@root/*": ["./src/*"]   ,   
-      "@Auth/*": ["src/auth/*"],
-      "@User/*": ["src/user/*"],
-      "@Template/*": ["src/template/*"],
-      "@Proposal/*": ["src/proposals/*"],
-      "@Contract/*": ["src/contract/*"],
-      "@Utils/*": ["src/utils/*"],
+      "@root/*": ["./src/*"]
     }
   }
 }

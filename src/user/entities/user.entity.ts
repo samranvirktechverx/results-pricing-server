@@ -1,17 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Address } from 'src/user/interfaces/address.interface';
+import { Address } from '@root/common/types/address';
 import mongoose, { Document } from 'mongoose';
-import { Template } from 'src/template/entities/template.entity';
-import { Proposal } from 'src/proposal/entities/proposal.entity';
-import { JoiPipeModule, JoiSchema, JoiSchemaOptions, CREATE, UPDATE } from 'nestjs-joi';
-import * as Joi from 'joi';
+import { Template } from '@root/template/entities/template.entity';
+import { Proposal } from '@root/proposal/entities/proposal.entity';
 import { Contract } from '@root/contract/entities/contract.entity';
 
 export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-
   @Prop({
     //required: true,
     minlength: 1,

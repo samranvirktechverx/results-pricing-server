@@ -1,4 +1,11 @@
+import { IsOptional, IsString } from 'class-validator';
+
 export class QueryDTO {
-    type?: string;
-    firstName?: object;
+  @IsOptional()
+  @IsString()
+  type?: string;
+
+  @IsOptional()
+  @IsString()
+  firstName?: object;
 }

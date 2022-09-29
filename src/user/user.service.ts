@@ -2,54 +2,20 @@ import { Injectable, Req, Res } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from '@root/user/entities/user.entity';
-import { CreateUserDTO } from '@root/user/dtos/create-user.dto';
-import * as bcrypt from 'bcrypt';
 import { UserRepository } from '@root/user/repositories/user.repository';
-import { OptionGetAll } from '@root/user/interfaces/option-get-all.interface';
+import { OptionGetAll } from '@root/common/types/option.interface';
 import { ProposalDocument } from '@root/proposal/entities/proposal.entity';
 import { _ } from 'agile';
 
 @Injectable()
 export class UserService {
     constructor(
-        @InjectModel('User') private readonly userModel: Model<UserDocument>,
         private readonly userRepository: UserRepository,
         @InjectModel('Proposal')
         private readonly proposalModel: Model<ProposalDocument>,
     ) { }
 
-    async addUser(createUserDTO: CreateUserDTO): Promise<any> {
-        const newUser = await this.userModel.create(createUserDTO);
-        newUser.password = await bcrypt.hash(newUser.password, 10);
-        return newUser.save();
-    }
-
-    async findUser(email: string): Promise<User | undefined> {
-        const user = await this.userModel.findOne({ email: email });
-        return user;
-    }
-
-    async findUserById(userId: string): Promise<User> {
-        const user = await this.userModel.findById(userId);
-        return user;
-    }
-
-    async deleteUser(userId: string): Promise<User> {
-        const deletedUser = await this.userModel.findByIdAndRemove(userId);
-        return deletedUser;
-    }
-
-    async updateUser(
-        userId: string,
-        updateUserDTO: CreateUserDTO,
-    ): Promise<User> {
-        const updatedUser = await this.userModel.findByIdAndUpdate(
-            userId,
-            updateUserDTO,
-            { new: true },
-        );
-        return updatedUser;
-    }
+  
 
     async createClient(req: any): Promise<any> {
         const password = await this.makePassword(6);
@@ -144,9 +110,10 @@ export class UserService {
     }
 
     async getAll(req: any): Promise<any> {
-        const { user: userId, query, body = null } = req;
-        const user = await this.userModel.findOne({ _id: userId });
+        let { user, query, body  } = req;
 
+        user = this.userRepository.findUserById(user)
+       
         let isClientManager = false;
         if (user.type == 'clientManager') {
             isClientManager = true;

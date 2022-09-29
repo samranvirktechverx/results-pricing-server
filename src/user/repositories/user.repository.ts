@@ -4,14 +4,48 @@ import { Model } from 'mongoose';
 import { CreateUserDTO } from '@root/user/dtos/create-user.dto';
 import { GetLengthUserDto } from '@root/user/dtos/length-user.dto';
 import { User, UserDocument } from '@root/user/entities/user.entity';
-import { Option } from '@root/user/interfaces/option.interface';
-import { QueryDTO } from '../dtos/query.dto';
+import { Option } from '@root/common/types/option.interface';
+import { QueryDTO } from '@root/user/dtos/query.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserRepository {
     constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) { }
 
-    async createAndSave(createUserDTO: CreateUserDTO): Promise<User> {
+    async addUser(createUserDTO: CreateUserDTO): Promise<User> {
+        const newUser = await this.userModel.create(createUserDTO);
+        newUser.password = await bcrypt.hash(newUser.password, 10);
+        return newUser.save();
+    }
+
+    async findUser(email: string): Promise<User | undefined> {
+        const user = await this.userModel.findOne({ email: email });
+        return user;
+    }
+
+    async findUserById(userId: string): Promise<User> {
+        const user = await this.userModel.findById(userId);
+        return user;
+    }
+
+    async deleteUser(userId: string): Promise<User> {
+        const deletedUser = await this.userModel.findByIdAndRemove(userId);
+        return deletedUser;
+    }
+
+    async updateUser(
+        userId: string,
+        updateUserDTO: CreateUserDTO,
+    ): Promise<User> {
+        const updatedUser = await this.userModel.findByIdAndUpdate(
+            userId,
+            updateUserDTO,
+            { new: true },
+        );
+        return updatedUser;
+    }
+
+    async createAndSave(createUserDTO: CreateUserDTO): Promise<UserDocument> {
         const user = new this.userModel(createUserDTO);
         return user.save();
     }
@@ -52,7 +86,7 @@ export class UserRepository {
         }
     }
 
-    async getAll(user: GetLengthUserDto, query: any, body: any): Promise<any> {
+    async getAll(user: GetLengthUserDto, query: any, body: any): Promise<UserDocument[]> {
         const option: Option = {
             clientManagerId: user._id,
             type: query.type,

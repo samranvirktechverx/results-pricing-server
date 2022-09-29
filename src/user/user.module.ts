@@ -12,8 +12,8 @@ import {
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     MongooseModule.forFeature([
+      { name: User.name, schema: UserSchema },
       { name: Proposal.name, schema: ProposalSchema },
     ]),
   ],
@@ -22,4 +22,4 @@ import {
   controllers: [UserController],
   exports: [UserService, UserRepository],
 })
-export class UserModule { }
+export class UserModule {}
