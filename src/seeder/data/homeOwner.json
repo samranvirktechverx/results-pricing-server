@@ -1,0 +1,27 @@
+{
+    "_id": "6278c5b2eaaccd5ef19c400e",
+    "persons": [
+        {
+            "phone": "90909",
+            "email": "samran3@mail.com",
+            "lastName": "samran",
+            "firstName": "virk"
+        },
+        {
+            "phone": "90909",
+            "email": "vir4@mail.com",
+            "lastName": "Sss",
+            "firstName": "saa"
+        }
+    ],
+    "attachments": ["aa", "aaa"],
+    "notes": "ddddd",
+    "address": {
+        "street": "mvp",
+        "city": "lahore",
+        "subDivision": "hh",
+        "zip": 5234
+    },
+    "clientManagerId": "626a5ce188c0456851bbd23c",
+    "creatorId": "626a5ce188c0456851bbd23c"
+}

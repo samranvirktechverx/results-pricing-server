@@ -1,0 +1,33 @@
+{
+    "_id": "626a5ce188c0456851bbd23s",
+    "firstName": "clientSalesMAn",
+    "email": "client@gmail.com",
+    "password": "client@1234",
+    "lastName": "manager",
+    "companyLogo": "wwww",
+    "companyName": "techverx",
+    "companyInitial": "TXVER",
+    "address": {
+        "street": "14",
+        "city": "lahore",
+        "subDivision": "Gulberg",
+        "zip": 5234
+    },
+    "phone": "+9345989",
+    "type": "clientSales",
+    "categories": [
+        {
+            "category": "6278ab7f254ee3069d64b731",
+            "sub_Categories": [
+                {
+                    "sub_category": "6278ab7f254ee3069d64b732",
+                    "sub_sub_Categories": [
+                        {
+                            "sub_sub_category": "6278ab7f254ee3069d64b733"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

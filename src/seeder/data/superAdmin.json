@@ -1,0 +1,14 @@
+{
+  "firstName": "super",
+  "lastName": "super",
+  "email": "admin@mail.com",
+  "password": "admin@1234",
+  "address": {
+    "street": "+Dumy",
+    "city": "+Dumy",
+    "subDivision": "+Dumy",
+    "zip": 1234
+  },
+  "phone": "+12345667",
+  "type": "admin"
+}

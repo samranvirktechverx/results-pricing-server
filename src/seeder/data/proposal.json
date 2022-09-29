@@ -1,0 +1,69 @@
+{
+    "_id": "62790d32199db82cbec81955",
+    "proposalName": "SampleProposal",
+    "poolPerimeter": "sample",
+    "status": "active",
+    "poolSqft": "24sq",
+    "depth1": "1sqf",
+    "depth2": "3sqf",
+    "depth3": "4sqf",
+    "spaPerimeter": "ll",
+    "spaRaisedAbovePool": "ddd",
+    "spaSqft": "Sss",
+    "spaDepth": "rrr",
+    "attachments": ["dd", "dd"],
+    "notes": "Ddd",
+    "totalRetail": 300,
+    "categories": [
+        {
+            "active": true,
+            "quantity": 0,
+            "_id": "62790915e706d528acc1541c",
+            "category": {
+                "detail": "It's Parent Category",
+                "price": 0,
+                "previousPrice": 0,
+                "parent": true,
+                "active": true,
+                "_id": "6278ab7f254ee3069d64b731",
+                "name": "Floor"
+            },
+            "sub_Categories": [
+                {
+                    "active": true,
+                    "quantity": 0,
+                    "_id": "62790915e706d528acc1541d",
+                    "sub_category": {
+                        "detail": "It's subCategory",
+                        "price": 0,
+                        "previousPrice": 0,
+                        "parent": false,
+                        "active": true,
+                        "_id": "6278ab7f254ee3069d64b732",
+                        "name": "Tile"
+                    },
+                    "sub_sub_Categories": [
+                        {
+                            "active": true,
+                            "quantity": 0,
+                            "_id": "62790915e706d528acc1541e",
+                            "sub_sub_category": {
+                                "detail": "It's Sub Sub Category",
+                                "price": 100,
+                                "previousPrice": 0,
+                                "parent": false,
+                                "active": true,
+                                "_id": "6278ab7f254ee3069d64b733",
+                                "name": "20 inch tile"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "homeOwner": ["6278c5b2eaaccd5ef19c400e"],
+    "customField": ["6278c89715d860691063b0ca"],
+    "clientManagerId": "626a5ce188c0456851bbd23c",
+    "creatorId": "626a5ce188c0456851bbd23c"
+}
